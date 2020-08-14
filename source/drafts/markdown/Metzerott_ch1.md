@@ -18,9 +18,9 @@ sourceDesc:
     title: Metzerott, Shoemaker
     title_level: m
     author: Katherine Pearson Woods
-		publisher: Thomas Y. Crowell & Co.
-			pubPlace: New York
-			date_iso: 1889
+    publisher: Thomas Y. Crowell & Co.
+      pubPlace: New York
+      date_iso: 1889
       date_description: 1889
 encodingDesc:
   projectDesc: Text created for online distribution through the Recovery Hub of American Women Writers (recoveryhub.siue.edu)
@@ -131,9 +131,11 @@ DEDICATION
 
 <div type="chapter" n="1" xml:id="bk1ch1">
 
-METZEROTT, SHOEMAKER
-CHAPTER I.
-KARL METZEROTT ATTENDS A KAFFEE KLATSCH.</head>
+#### METZEROTT, SHOEMAKER
+
+##### CHAPTER I.
+
+###### KARL METZEROTT ATTENDS A KAFFEE KLATSCH.
 
 KARL METZEROTT, shoemaker, counted himself reasonably well-to-do in the world. It was a favorite saying of his (though he was not greatly given to sayings at any time, his days being so full of doings), that his Socialist opinions were not based upon his own peculiar needs; and that, when the Commune[^1] should supervene, as he fervently believed it must some day, he, Karl Metzerott, would be numbered rather among its givers than its receivers.
 
