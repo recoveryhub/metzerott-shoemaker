@@ -47,24 +47,24 @@ revisionDesc:
 
 -----
 
-NEW YORK
-THOMAS Y. CROWELL & CO.
-13 Astor Place
-COPYRIGHT, 1889 BY THOMAS Y. CROWELL &#38; CO.
-C. J. PETERS &#38; SON, 
-TYPOGRAPHERS AND ELECTROTYPERS,
-145 HIGH
-STREET, BOSTON.
+NEW YORK  
+THOMAS Y. CROWELL & CO.  
+13 Astor Place  
+COPYRIGHT, 1889 BY THOMAS Y. CROWELL &#38; CO.  
+C. J. PETERS &#38; SON,   
+TYPOGRAPHERS AND ELECTROTYPERS,  
+145 HIGH  
+STREET, BOSTON.  
 
 <p style="text-align: center;">
 
 DEDICATION
-~Laborare est orare."~
-~TO~
-~The Clergy and the Workingmen of America.~
-~MAY THEY WORK AND PRAY TOGETHER~
-~FOR THE COMING OF THE~
-~KINGDOM OF CHRIST.~
+*Laborare est orare."*  
+*TO*  
+*The Clergy and the Workingmen of America.*  
+*MAY THEY WORK AND PRAY TOGETHER*  
+*FOR THE COMING OF THE*  
+*KINGDOM OF CHRIST.*  
 
 </p>
 
