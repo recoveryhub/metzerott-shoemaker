@@ -58,7 +58,7 @@ STREET, BOSTON.
 
 <p style="text-align: center;">
 
-DEDICATION
+DEDICATION  
 *Laborare est orare."*  
 *TO*  
 *The Clergy and the Workingmen of America.*  
