@@ -1,7 +1,8 @@
 ---
 title: Metzerott, Shoemaker
 author: Katherine Pearson Woods
-editor: Jean Lee Cole
+editor: 
+  editor_name: Jean Lee Cole
   editor_id: jlc: Jean Lee Cole
 consultant:
   name: Emily J. Rau
@@ -19,14 +20,16 @@ sourceDesc:
     title: Metzerott, Shoemaker
     title_level: m
     author: Katherine Pearson Woods
-    publisher: Thomas Y. Crowell & Co.
+    publisher: 
+    pub_name: Thomas Y. Crowell & Co.
       pubPlace: New York
       date_iso: 1889
       date_description: 1889
 encodingDesc:
   projectDesc: Text created for online distribution through the Recovery Hub of American Women Writers (recoveryhub.siue.edu)
 revisionDesc:
-  change: Intitial creation of TEI from transcription
+  change: 
+    change_text: Intitial creation of TEI from transcription
     date_iso: 2020-07-22
     who: #ejr
 ---
