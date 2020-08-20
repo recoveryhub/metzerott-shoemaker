@@ -8,24 +8,6 @@
 
   <xsl:variable name="attribute_prefix">data-tei-</xsl:variable>
 
-<!--  <xsl:template name="make_xml_seperate_attributes">
-
-    <element>
-      <xsl:attribute name="name" select="name()" />
-      <xsl:for-each select="@*">
-        <attribute>
-          <xsl:attribute name="name" select="name()" />
-          <!-\- attributes seperated by space divided into seperate attributes -\->
-          <xsl:for-each select="tokenize(., ' ')">
-            <value>
-              <xsl:attribute name="name" select="." />
-            </value>
-          </xsl:for-each>
-        </attribute>
-      </xsl:for-each>
-    </element>
-  </xsl:template>-->
-
   <xsl:template name="make_xml">
     <element>
       <xsl:attribute name="name" select="translate(name(), ':', '')" />
@@ -33,7 +15,14 @@
         <attribute>
           <xsl:attribute name="name" select="translate(name(), ':', '')" />
           <value>
-            <xsl:value-of select="translate(., ':', '')" />
+            <xsl:choose>
+              <xsl:when test="starts-with(.,'http')">
+                <xsl:value-of select="." />
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="translate(., ':', '-')" />
+              </xsl:otherwise>
+            </xsl:choose>
           </value>
         </attribute>
       </xsl:for-each>
@@ -48,19 +37,52 @@
 
       <xsl:call-template name="make_xml" />
     </xsl:variable>
-
     <xsl:for-each select="$local_xml/element" xpath-default-namespace="">
-      <xsl:variable name="attribute">
-        <xsl:value-of select="$attribute_prefix" />
-        <xsl:text>e</xsl:text>
-      </xsl:variable>
-      <xsl:variable name="value" select="@name" />
-      <xsl:attribute name="{$attribute}" select="$value" />
+      <!-- exclude tei elements with analogous html elements 
+           from getting data-tei-e attribute -->
+      <xsl:if test="
+        (@name != 'p') and 
+        (@name != 'item') and
+        (@name != 'list')">
+        <xsl:variable name="attribute">
+          <xsl:value-of select="$attribute_prefix" />
+          <xsl:text>e</xsl:text>
+        </xsl:variable>
+        <xsl:variable name="value" select="@name" />
+        <xsl:attribute name="{$attribute}" select="$value" />
+      </xsl:if>
+      
     </xsl:for-each>
-
 
     <xsl:for-each select="$local_xml/element/attribute/value" xpath-default-namespace="">
       <xsl:choose>
+        <!-- Turn xml:id's into id's -->
+        <xsl:when test="../@name = 'xmlid'">
+          <xsl:variable name="value">
+            <xsl:value-of select="." />
+          </xsl:variable>
+          <xsl:attribute name="id" select="$value" />
+        </xsl:when>
+        <!-- Turn targets into links -->
+        <xsl:when test="(../@name = 'target') and (../../@name = 'ref')">
+          <xsl:variable name="value">
+            <xsl:choose>
+              <xsl:when test="starts-with(.,'http')">
+                <xsl:value-of select="."/>
+              </xsl:when>
+              <xsl:when test="starts-with(.,'#')">
+                <xsl:text>#</xsl:text>
+                <xsl:value-of select="substring-after(.,'#')"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:text>#</xsl:text>
+                <xsl:value-of select="."/>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
+          <xsl:attribute name="href" select="$value" />
+        </xsl:when>
+        <!-- pull hand info from tei header -->
         <xsl:when test="../@name = 'hand'">
           <xsl:variable name="full_hand_id" select="." />
           <xsl:variable name="hand_id" select="substring-after(., '#')" />
@@ -105,8 +127,9 @@
           </xsl:for-each><!-- /adding data-tei-a-hand elements -->    
           
         </xsl:when>
+        <!-- apply generic data- attributes -->
         <xsl:otherwise>
-
+          
           <xsl:variable name="attribute">
             <xsl:value-of select="$attribute_prefix" />
             <xsl:text>a</xsl:text>
@@ -117,7 +140,7 @@
             <xsl:value-of select="." />
           </xsl:variable>
           <xsl:attribute name="{$attribute}" select="$value" />
-
+          
         </xsl:otherwise>
       </xsl:choose>
     </xsl:for-each>
@@ -150,35 +173,26 @@
   </xsl:template>
   
   <xsl:template match="note" priority="1">
-    <xsl:choose>
-      <xsl:when test="@place = 'foot'">
-        <span>
-          <xsl:call-template name="add_attributes" />
-          <a>
-            <xsl:attribute name="href">
-              <xsl:text>#</xsl:text>
-              <xsl:text>foot</xsl:text>
-              <xsl:value-of select="@xml:id"/>
-            </xsl:attribute>
-            <xsl:attribute name="id">
-              <xsl:text>body</xsl:text>
-              <xsl:value-of select="@xml:id"/>
-            </xsl:attribute>
-            
-            <xsl:text>(</xsl:text>
-            <xsl:value-of select="substring(@xml:id, 2)"/>
-            <xsl:text>)</xsl:text>
-          </a>
-        </span>
-      </xsl:when>
-      <xsl:when test="@type = 'editorial'"/>
-      <xsl:otherwise>
-        <div>
-          <xsl:call-template name="add_attributes" />
-          <xsl:apply-templates/>
-        </div>
-      </xsl:otherwise>
-    </xsl:choose>
+    <p>
+      <xsl:call-template name="add_attributes" />
+      <xsl:apply-templates />
+      
+      <xsl:call-template name="note_back_link"/>
+    </p>
+  </xsl:template>
+  
+  <xsl:template name="note_back_link">
+    <span class="tei-note-back">
+      <xsl:text> [</xsl:text>
+      <a>
+        <xsl:attribute name="href">
+          <xsl:text>#</xsl:text>
+          <xsl:value-of select="translate(@target,'#','')"/>
+        </xsl:attribute>
+        <xsl:text>back</xsl:text>
+      </a>
+      <xsl:text>] </xsl:text>
+    </span>
   </xsl:template>
 
   <!-- ===============
@@ -192,7 +206,7 @@
   
   <!--<div> (force block level elements) -->
   <xsl:template 
-    match="div | div1 | div2 | div3 | div4 | div5 | div6 | div7 | body" 
+    match="div | div1 | div2 | div3 | div4 | div5 | div6 | div7 | body | back" 
     priority="1">
     <div>
       <xsl:call-template name="add_attributes"/>
@@ -246,10 +260,10 @@
       <!-- move head outside list if there is one -->
       <xsl:if test="head">
         <xsl:for-each select="head">
-          <div>
+          <span>
             <xsl:call-template name="add_attributes"/>
             <xsl:apply-templates />
-          </div>
+          </span>
         </xsl:for-each>
       </xsl:if>
       <ul>
@@ -316,6 +330,13 @@
     </a>
   </xsl:template>
   
+  <xsl:template match="ref" priority="1">
+    <a>
+      <xsl:call-template name="add_attributes" />
+      <xsl:apply-templates />
+    </a>
+  </xsl:template>
+  
   <!-- <abbr> -->
   
   <xsl:template match="choice[child::abbr]" priority="2">
@@ -354,12 +375,22 @@
   <!-- <sub> -->
   
   <!-- <sup> -->
-  <xsl:template match="add[@place = 'superlinear'] | add[@place = 'supralinear']" priority="3">
+  <xsl:template match="add[@place = 'superlinear'] | add[@place = 'supralinear'] | *[@rendition='simple:superscript']" priority="3">
     <sup>
-      <add>
-        <xsl:call-template name="add_attributes"/>
-        <xsl:apply-templates/>
-      </add>
+      <xsl:choose>
+        <xsl:when test="name(.) = 'add'">
+          <add>
+            <xsl:call-template name="add_attributes"/>
+            <xsl:apply-templates/>
+          </add>
+        </xsl:when>
+        <xsl:otherwise>
+          <span>
+            <xsl:call-template name="add_attributes"/>
+            <xsl:apply-templates/>
+          </span>
+        </xsl:otherwise>
+      </xsl:choose>
     </sup>
   </xsl:template>
   

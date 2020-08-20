@@ -1,36 +1,17 @@
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+
+# Datura
 .DS_Store
 config/private.yml
 /logs/*
 
-# scripts/.xslt-datura is populated by the datura gem and should not be tracked / edited
+# scripts/.xslt is populated based on version of datura gem
 /scripts/.xslt-datura/*
 
-# ignore all output types except for production html
 /output/*
-!/output/production
-/output/production/*
-!/output/production/html
-
-!/output/data-tei
-/output/data-tei/*
-!/output/data-tei/html
-
-!/output/data-tei-wrap
-/output/data-tei-wrap/*
-!/output/data-tei-wrap/html
-
-!/output/teic-html
-/output/teic-html/*
-!/output/teic-html/html
-
-!/output/teic-html5
-/output/teic-html5/*
-!/output/teic-html5/html
-
-!/output/teic-markdown
-/output/teic-markdown/*
-!/output/teic-markdown/html
-
-!/output/teic-text
-/output/teic-text/*
-!/output/teic-text/html
+# increase specificity of this path if you wish to only track generated html
+!/output/production/
