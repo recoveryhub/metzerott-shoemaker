@@ -1,3 +1,4 @@
+---
 title: Metzerott, Shoemaker
 author: Katherine Pearson Woods
 editor: Jean Lee Cole
@@ -27,7 +28,8 @@ encodingDesc:
 revisionDesc:
   change: Intitial creation of TEI from transcription
     date_iso: 2020-07-22
-    who: #ejr">
+    who: #ejr
+---
 
 // yaml + html, generally not noting style of anything except bold, italic, underline, center, left, right, justify, strikethrough
 
