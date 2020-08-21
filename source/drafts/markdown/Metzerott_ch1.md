@@ -2,8 +2,8 @@
 title: Metzerott, Shoemaker
 author: Katherine Pearson Woods
 editor: 
-  editor_name: Jean Lee Cole
-  editor_id: jlc: Jean Lee Cole
+  name: Jean Lee Cole
+  id: jlc: Jean Lee Cole
 consultant:
   name: Emily J. Rau
   id: ejr
@@ -29,9 +29,9 @@ encodingDesc:
   projectDesc: Text created for online distribution through the Recovery Hub of American Women Writers (recoveryhub.siue.edu)
 revisionDesc:
   change: 
-    change_text: Intitial creation of TEI from transcription
+    text: Intitial creation of TEI from transcription
     date_iso: 2020-07-22
-    who: #ejr
+    id: ejr
 ---
 
 // yaml + html, generally not noting style of anything except bold, italic, underline, center, left, right, justify, strikethrough
