@@ -1,6 +1,4 @@
-
-// Without jQuery
-// Define a convenience method and use it
+// Document ready funtion
 var ready = (callback) => {
   if (document.readyState != "loading") callback();
   else document.addEventListener("DOMContentLoaded", callback);
@@ -30,21 +28,10 @@ var toggle = function (elem) {
 
 };
 
-
 ready(() => { 
-  //document.querySelector("#more_metadata");
 
-  //var box = document.querySelector(".box");
-//box.classList.add("focus");
-//box.classList.remove("focus");
-
-// Remove the "focus" class and add "blurred"
-//document.querySelector(".box").classList.replace("focus", "blurred"); 
-
-
-var to_hide = document.querySelector("#more_metadata");
-hide(to_hide);
-
+  var to_hide = document.querySelector("#more_metadata");
+  hide(to_hide);
 
 });
 

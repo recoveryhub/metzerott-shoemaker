@@ -3,7 +3,7 @@ layout: default
 
 # TEI Header Info
 
-title: Metzerott, Shoemaker
+title: Metzerott, Shoemaker (Markdown)
 author: Katherine Pearson Woods
 editor:
   - name: Jean Lee Cole
@@ -28,12 +28,12 @@ bibl:
     date_description: 1889
 projectDesc: Text created for online distribution through the Recovery Hub of American Women Writers (recoveryhub.siue.edu)
 change: 
-    - text: Intitial creation of TEI from transcription
-      date_iso: 2020-07-22
-      id: ejr
-    - text: Turned into Markdown
-      date_iso: 2020-08-26
-      id: kmd
+  - text: Intitial creation of TEI from transcription
+    date_iso: 2020-07-22
+    id: ejr
+  - text: Turned into Markdown
+    date_iso: 2020-08-26
+    id: kmd
 ---
 
 <h2>Metadata</h2>
@@ -83,12 +83,12 @@ change:
 {% for change_hash in page.change %}
     
       
-      <dd>
-        {% for change in change_hash %}
-          {{ change[1] }}
-          {% if forloop.last == false %} - {% endif %}
-        {% endfor %}
-      </dd>
+    <dd>
+      {% for change in change_hash %}
+        {{ change[1] }}
+        {% if forloop.last == false %} - {% endif %}
+      {% endfor %}
+    </dd>
     
   {% endfor %}
 
