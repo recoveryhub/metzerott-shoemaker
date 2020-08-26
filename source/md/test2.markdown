@@ -1,6 +1,4 @@
-# Test2 File
-
-## {{ page.title }}
+## Test2 File
 
 This is a test2
 
