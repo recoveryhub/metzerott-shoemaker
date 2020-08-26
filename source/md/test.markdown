@@ -1,5 +1,6 @@
 ---
 layout: default
+permalink: /test
 
 # TEI Header Info
 
