@@ -22,7 +22,7 @@ title: Metzerott, Shoemaker Edition
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Text created for online distribution through the Recovery Hub of American Women Writers (recoveryhub.siue.edu)
-baseurl: "/metzerott_shoemaker" # the subpath of your site, e.g. /blog
+baseurl: "/metzerott-shoemaker" # the subpath of your site, e.g. /blog
 url: "https://recoveryhub.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username:  
