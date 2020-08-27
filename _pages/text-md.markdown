@@ -313,7 +313,7 @@ And Dora, though she laughed and blushed still deeper, found it most convenient 
 
 [^1]: 1: The Commune, figured most prominently for Marx by the Paris commune (March 18-May 28 1871), represented a  society liberated from capitalism and led by the proletariat. 
  
-    [need to add more here about the Commune as an intermediate state between capitalism and  Communism; Marx describe the time in as a “dictatorship of the proletariat”  necessary as a stepping stone from private to collective ownership of the means of production.]
+<!--[need to add more here about the Commune as an intermediate state between capitalism and  Communism; Marx describe the time in as a “dictatorship of the proletariat”  necessary as a stepping stone from private to collective ownership of the means of production.] -->
 
 [^2]: 2: In the German folktale-Romance Undine, by Friedrich de la Motte Fouqué (1811), the knight (Ritter is German for “knight”) Huldbrand encounters the water-sprite Undine in  the Enchanted Forest, falls in love with her, and marries her, under the  condition that she be permitted to return to her mermaid shape on Saturdays. The  novella was widely translated during the 19th century and adapted for the ballet and the opera. 
 
