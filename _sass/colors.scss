@@ -1,0 +1,19 @@
+// https://coolors.co/393e41-d3d0cb-e7e5df-44bba4-e7bb41-f4dfa4-369683-397f71
+$light: #e7e5df; // platinum
+$dark: #393E41; // onyx
+
+$white: white;
+$black: black;
+
+$accent1: #E7BB41; // yellow orange
+$accent2: #44BBA4; // cyan
+
+$text-on-light: $dark;
+$link-on-light: #369683; // blue-green
+$link-on-light-hover: darken($link-on-light, 10%); // darkened
+
+$text-on-dark: white;
+$link-on-dark: $accent1;
+$link-on-dark-hover: lighten($link-on-dark, 15%); // lightened
+
+
