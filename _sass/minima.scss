@@ -277,10 +277,12 @@ a {
   }
 }
 
+header.site-header {
+  border-bottom: 10px solid #44bba4 !important; 
+}
+
 header.site-header, footer {
   background-color: #393e41;
-   
-   
   color: #fff;
   a {
     color: #e7bb41 !important;
