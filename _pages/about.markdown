@@ -10,7 +10,10 @@ Part of the [Women Writer's Recovery Hub](https://recoveryhub.github.io/)
 
 ## Credits: 
 
-- person
-- person
+- Editor: Jean Lee Coe
+- Encoding and Advising: Emily Rau
+- Encoding, Programming, Design: Karin Dalziel
 
-Other info goes here 
+## Source
+
+You can find the source code [On Github](https://github.com/recoveryhub/metzerott-shoemaker)
