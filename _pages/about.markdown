@@ -4,7 +4,11 @@ title: About
 permalink: /about/
 ---
 
-# Credits: 
+## Project
+
+Part of the [Women Writer's Recovery Hub](https://recoveryhub.github.io/)
+
+## Credits: 
 
 - person
 - person

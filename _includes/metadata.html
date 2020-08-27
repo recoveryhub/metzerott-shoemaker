@@ -1,0 +1,73 @@
+<h2>Metadata</h2>
+
+<div class="metadata">
+<dl>
+  <dt>Display Title</dt>
+  <dd>{{ page.title }}</dd>
+
+  <dt>Author</dt>
+  <dd>{{ page.author }}</dd>
+
+  <dt>Editor</dt>
+  <dd>{% for edit in page.editor %} {{ edit.name }} {% endfor %}</dd>
+
+</dl>
+
+<div class="toggle_more_metadata"><a class="toggle" href="#more_metadata">Show Metadata</a></div>
+<div class="toggle-content" id="more_metadata">
+
+<dl>
+
+  <dt>Consultants</dt>
+
+  {% for consult in page.consultant %}
+    <dd>
+      {{ consult.name }} - {{ consult.id }}
+    </dd>
+  {% endfor %}
+</dl>
+<h3>Digital Item Information</h3>
+<dl>
+  <!-- publicationStmt -->
+  {% for pub_hash in page.publicationStmt %}
+    {% for pub in pub_hash %}
+      <dt>{{ pub[0] | capitalize }}</dt>
+      <dd>{{ pub[1] }}</dd>
+    {% endfor %}
+  {% endfor %}
+
+  <dt>Project Description</dt>
+  <dd>{{ page.projectDesc }}</dd>
+
+<!-- Change log -->
+
+<dt>Changes</dt>
+{% for change_hash in page.change %}
+    
+      
+    <dd>
+      {% for change in change_hash %}
+        {{ change[1] }}
+        {% if forloop.last == false %} - {% endif %}
+      {% endfor %}
+    </dd>
+    
+  {% endfor %}
+
+</dl>
+
+<h3>Original Item Information</h3>
+<dl>
+
+  <!-- bibl -->
+
+  {% for bibl_hash in page.bibl %}
+    {% for bibl in bibl_hash %}
+      <dt>{{ bibl[0] | capitalize }}</dt>
+      <dd>{{ bibl[1] }}</dd>
+    {% endfor %}
+  {% endfor %}
+
+</dl>
+</div>
+</div>

@@ -10,7 +10,7 @@ editor:
   - name: Jean Lee Cole
 ---
 
-## Introduction 
+# Introduction 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at nisi id nisi sodales faucibus. Vestibulum sit amet justo eros. Sed ullamcorper, sapien vitae lobortis condimentum, purus dolor consequat est, non tincidunt turpis sapien ac augue. Phasellus a justo pellentesque, vehicula tellus eu, condimentum metus. Aliquam ipsum nulla, gravida placerat nisl et, finibus aliquam erat. Curabitur odio mauris, faucibus at nibh in, pulvinar convallis massa. Donec cursus nulla enim.
 

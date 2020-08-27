@@ -36,6 +36,12 @@ collections:
   pages:
     output: true
     permalink: /:path
+    order:
+      - index.markdown
+      - text-md.markdown
+      - text-tei.html
+      - about.markdown
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -57,3 +63,6 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - scripts
+
+plugins:
+  - jekyll-datapage-generator

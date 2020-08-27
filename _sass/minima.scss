@@ -57,7 +57,7 @@ $on-laptop:        800px !default;
 body {
   font-size: 1.1em;
   font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
-  margin-bottom: 50em;
+  
 }
 
 [data-tei-a-hand-medium="black pen"] {
@@ -208,18 +208,13 @@ ul ul {
 }
 
 .toggle_more_metadata {
-  background-color: #aaa;
+  text-align: center;
 }
 
 .metadata {
-  margin: 0px 0 20px 0;
-  padding: 5px 20px 0px 20px;
-  background-color: #e4e5d1;
-  border-right: 1px solid #d5d6c3;
-  border-left: 1px solid #d5d6c3;
-  border-top: 1px solid #d5d6c3;
-  overflow: auto;
-  clear: both;
+
+  background-color: #fff;
+
 }
 
 .metadata {
@@ -241,7 +236,7 @@ ul ul {
 
 .page {
   display: block;
-  background-color: #aaa;
+  background-color: #393e41;
   color: #fff;
   text-align: center;
   &::before {
@@ -251,4 +246,44 @@ ul ul {
     content: '  ]';
   }
 
+}
+
+body {
+  background-color: #e7e5df;
+}
+
+
+
+
+
+footer {
+  height: 90vh !important;
+  border-top: 10px solid #44bba4 !important; 
+}
+
+.footer-col-wrapper {
+  color: #fff;
+}
+
+a {
+  color: #369683;
+  text-decoration: underline;
+  text-decoration-color: #E7BB41;
+  text-decoration-thickness: .3em;
+  &:hover {
+    color: #397F71;
+    text-decoration-thickness: .1em;
+    text-decoration-color: #E7BB41;
+  }
+}
+
+header.site-header, footer {
+  background-color: #393e41;
+   
+   
+  color: #fff;
+  a {
+    color: #e7bb41 !important;
+    text-decoration: none;
+  }
 }
