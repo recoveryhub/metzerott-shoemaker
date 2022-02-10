@@ -8,7 +8,7 @@ consultant:
   name: Emily J. Rau
   id: ejr
 consultant:
-  name: Karin Dalziel
+  name: Karin Dalziel  
   id: kd
 publicationStmt:
   authority: Recovery Hub of American Women Writers
@@ -77,7 +77,7 @@ DEDICATION
 
 <p style="text-align: center;">
 
-## CONTENTS
+## CONTENTS   
 
 ### BOOK I
 
